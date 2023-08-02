@@ -2,7 +2,7 @@ import styles from './Ordenador.module.scss';
 import opcoes from './opcoes.json';
 import React, { memo, useState } from 'react';
 import classNames from 'classnames';
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
+import { MdKeyboardArrowUp } from 'react-icons/md';
 
 interface Props {
   ordenador: string,
