@@ -4,7 +4,7 @@ import React, { memo, useState } from 'react';
 import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
-interface Props { 
+interface Props {
   ordenador: string,
   setOrdenador: React.Dispatch<React.SetStateAction<string>>
 }
@@ -25,7 +25,12 @@ function Ordenador({
       onBlur={() => setAberto(false)}
     >
       <span>{nomeOrdenador || 'Ordenar Por'}</span>
-      {aberto ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} /> }
+      <MdKeyboardArrowUp
+        size={20}
+        style={{
+          transform: `rotate(${aberto ? 0 : 180}deg)`
+        }}
+      />
       <div className={classNames({
         [styles.ordenador__options]: true,
         [styles['ordenador__options--ativo']]: aberto
